@@ -46,7 +46,7 @@ public class JasperReportService implements ReportService {
         if (parameters == null) {
             parameters = new HashMap<>();
         }
-        parameters.put("LOGO_INPUT_STREAM", JasperReportService.class.getClassLoader().getResourceAsStream("META-INF/logo_bsb.png"));
+        parameters.put("LOGO_INPUT_STREAM", JasperReportService.class.getClassLoader().getResourceAsStream("/logo_bsb.png"));
         ReportGenerator generator = reportGenerators.get(reportFormat);
         if (generator != null) {
             if (httpServletResponse != null) {

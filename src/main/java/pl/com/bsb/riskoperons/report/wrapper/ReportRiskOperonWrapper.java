@@ -17,6 +17,9 @@ public class ReportRiskOperonWrapper implements Serializable {
 
     private String clientName;
     private String clientInformation;
+    
+    private String environmentName;
+    private String environmentInfo;
 
     private String appUrlPath;
     private String appHost;
@@ -56,6 +59,22 @@ public class ReportRiskOperonWrapper implements Serializable {
         this.clientInformation = clientInformation;
     }
 
+    public String getEnvironmentName() {
+        return environmentName;
+    }
+
+    public void setEnvironmentName(String environmentName) {
+        this.environmentName = environmentName;
+    }
+
+    public String getEnvironmentInfo() {
+        return environmentInfo;
+    }
+
+    public void setEnvironmentInfo(String environmentInfo) {
+        this.environmentInfo = environmentInfo;
+    }
+    
     public String getAppUrlPath() {
         return appUrlPath;
     }

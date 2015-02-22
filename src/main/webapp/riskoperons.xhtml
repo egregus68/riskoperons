@@ -24,8 +24,10 @@ and open the template in the editor.
                 <p:panelGrid id="resultPanelId" columns="2" style="width: 100%;" columnClasses="left-style, right-style" layout="grid" rendered="#{riskOperonBean.rendered}">            
 
                     <f:facet name="header">
+                        <h:outputText value="#{riskOperonBean.selectedClientName}"/>
+                        <p:spacer width="20"/>
                         <h:outputText value="#{riskOperonBean.selectedEnvironmentName}"/>  
-                        <p:spacer width="10"/>
+                        <p:spacer width="20"/>
                         <h:outputText value="#{riskOperonBean.selectedEnvironmentInfo}" style="color: red"/>  
                     </f:facet>
 

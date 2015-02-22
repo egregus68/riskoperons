@@ -135,7 +135,7 @@ public class RiskOperonBean extends ReportBase implements Serializable {
         this.selectedEnvironment = selectedEnvironment;
     }
     
-    public String getSelectedEnvironmentName() {       
+    public String getSelectedClientName() {       
         String result = "";
         String clientName = "";
         for (ClientEnvironment clientEnvironment : clientEnvironments) {
@@ -148,7 +148,12 @@ public class RiskOperonBean extends ReportBase implements Serializable {
             }
         }
         result += clientName;
-        result += " [środowisko " + selectedEnvironment.getEnvironmentType().getName();
+        return  result;
+    }
+    
+    public String getSelectedEnvironmentName() {       
+        String result = "";
+        result += "[środowisko " + selectedEnvironment.getEnvironmentType().getName();
         result += (null!=selectedEnvironment.getName() ? " " + selectedEnvironment.getName() : "") + ", Id: " + selectedId + "]";
         return  result;
     }
@@ -179,6 +184,9 @@ public class RiskOperonBean extends ReportBase implements Serializable {
                         ReportRiskOperonWrapper wrapper = new ReportRiskOperonWrapper();
                         wrapper.setClientName(ce.getClient().getName());
                         wrapper.setClientInformation(ce.getClient().getInformation());
+                        
+                        wrapper.setEnvironmentName("Środowisko " + ce.getEnvironment().getEnvironmentType().getName() + " " + ce.getEnvironment().getName() + "  Id: " + ce.getEnvironment().getId());
+                        wrapper.setEnvironmentInfo(ce.getEnvironment().getInformation());
                         
                         wrapper.setAppUrlPath(ce.getEnvironment().getApplicationLayer().getUrlPath());
                         wrapper.setAppHost(ce.getEnvironment().getApplicationLayer().getHost());
