@@ -136,6 +136,7 @@ public class RiskOperonBean extends ReportBase implements Serializable {
     }
     
     public String getSelectedEnvironmentName() {       
+        String result = "";
         String clientName = "";
         for (ClientEnvironment clientEnvironment : clientEnvironments) {
             if (clientEnvironment.getEnvironment().getId().equals(selectedId)) {
@@ -146,7 +147,15 @@ public class RiskOperonBean extends ReportBase implements Serializable {
                 }
             }
         }
-        return clientName + " [środowisko " + selectedEnvironment.getEnvironmentType().getName() + (null!=selectedEnvironment.getName() ? " " + selectedEnvironment.getName() : "") + ", Id: " + selectedId + "]";
+        result += clientName;
+        result += " [środowisko " + selectedEnvironment.getEnvironmentType().getName();
+        result += (null!=selectedEnvironment.getName() ? " " + selectedEnvironment.getName() : "") + ", Id: " + selectedId + "]";
+        return  result;
+    }
+    
+    public String getSelectedEnvironmentInfo() {       
+        String result = null!=selectedEnvironment.getInformation() && !selectedEnvironment.getInformation().isEmpty() ? selectedEnvironment.getInformation() : "";
+        return result;
     }
     
     
