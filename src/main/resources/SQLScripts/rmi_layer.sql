@@ -1,0 +1,26 @@
+REM INSERTING into RMI_LAYER
+ALTER SESSION SET CURRENT_SCHEMA = RISKOPERONS;
+SET DEFINE OFF;
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('1',null,null,null,null,null,null,null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('2','Windows',null,'GADB','8889','d:\RMIEnv\RMIReports\raportyWARTA\','D:\RMIEnv\RMIServers\RMI_WARTA',null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('3','Windows Server 2008 Standard',null,'10.20.187.2','8885','c:\riskrmi\pwarta\reports','c:\riskrmi\pwarta\server',null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('4',null,null,null,null,null,null,null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('5',null,null,null,null,null,null,null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('6',null,null,null,null,null,null,null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('7',null,null,null,null,null,null,null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('8','Windows Server 2008 Standard',null,'10.20.187.2','8887','c:\riskrmi\pgetin\reports','c:\riskrmi\pgetin\server',null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('9',null,null,null,null,null,null,null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('10',null,null,null,null,null,null,null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('11',null,null,null,null,null,null,null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('12',null,null,null,null,null,null,null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('13',null,null,null,null,null,null,null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('14','Windows Server 2008 Standard',null,'10.20.187.2','8889','c:\riskrmi\pnbp\reports','c:\riskrmi\pnbp\server',null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('15',null,null,null,null,null,null,null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('16',null,null,null,null,null,null,null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('17',null,null,null,null,null,null,null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('18',null,null,null,null,null,null,null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('19','Windows Server 2008 Standard',null,'10.20.187.2','8886','c:\riskrmi\dkomerc\reports','c:\riskrmi\dkomerc\server',null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('20','Windows Server 2008 Standard',null,'10.20.187.2','8884','c:\riskrmi\psgb\reports','c:\riskrmi\psgb\server','Serwer jeszcze nie gotowy.');
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('21',null,null,null,null,null,null,null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('22',null,null,null,null,null,null,null);
+Insert into RMI_LAYER (ID,OPERATING_SYSTEM,RMI_SYSTEM,HOST,PORT,REPORTS_PATH,RMI_SERVER_PATH,INFORMATION) values ('23','Windows Server 2008 Standard',null,'10.20.187.2','8883','c:\riskrmi\pdnbnord\reports','c:\riskrmi\pdnbnord\server',null);

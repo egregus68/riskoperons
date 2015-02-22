@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                    xmlns:ui="http://java.sun.com/jsf/facelets"
+                    template="templates/main.xhtml">
+        <ui:define name="metadata">
+        </ui:define>
+        <ui:define name="content">
+
+            <h:form id="resultForm">        
+
+
+
+                <p:panelGrid id="resultPanelId" columns="2" style="width: 100%;" columnClasses="left-style, right-style" layout="grid" rendered="#{riskOperonBean.rendered}">            
+
+                    <f:facet name="header">
+                        <h:outputText value="#{riskOperonBean.selectedEnvironmentName}"/>  
+                    </f:facet>
+
+                    <p:spacer height="20"/>
+                    <p:spacer height="20"/>
+
+                    <h:outputLink value="#{riskOperonBean.selectedEnvironment.applicationLayer.getUrlPath()}" title="#{riskOperonBean.selectedEnvironment.applicationLayer.getUrlPath()}">                                        
+                        <p:graphicImage name="./../resources/images/web-server.png" height="100" width="100"/>
+                    </h:outputLink>
+
+                    <p:fieldset legend="Serwer aplikacji">
+                        <p:panelGrid columns="2" style="width: 100%;" columnClasses="one, two">
+                            <h:outputText value="URL:" style="font-weight: bold" />                                                            
+                            <h:outputLink value="#{riskOperonBean.selectedEnvironment.applicationLayer.urlPath}" title="#{riskOperonBean.selectedEnvironment.applicationLayer.urlPath}">  
+                                <h:outputText value="#{riskOperonBean.selectedEnvironment.applicationLayer.urlPath}"/>  
+                            </h:outputLink>  
+
+                            <h:outputText value="HOST:" style="font-weight: bold" />
+                            <h:outputText value="#{riskOperonBean.selectedEnvironment.applicationLayer.host}" />
+
+                            <h:outputText value="OS:" style="font-weight: bold" />
+                            <h:outputText value="#{riskOperonBean.selectedEnvironment.applicationLayer.operatingSystem}" />
+
+                            <h:outputText value="AS:" style="font-weight: bold" />
+                            <h:outputText value="#{riskOperonBean.selectedEnvironment.applicationLayer.applicationSystem}" />
+                            
+                            <h:outputText value="Konsola adm.:" style="font-weight: bold" />
+                            <h:outputLink value="#{riskOperonBean.selectedEnvironment.applicationLayer.urlAdminConsole}" title="#{riskOperonBean.selectedEnvironment.applicationLayer.urlAdminConsole}">  
+                                <h:outputText value="#{riskOperonBean.selectedEnvironment.applicationLayer.urlAdminConsole}"/>  
+                            </h:outputLink>  
+                            
+                            <h:outputText value="Położenie:" style="font-weight: bold" />
+                            <h:outputText value="#{riskOperonBean.selectedEnvironment.applicationLayer.path}" />
+
+                            <h:outputText value="SVN:" style="font-weight: bold" />
+                            <h:outputText value="#{riskOperonBean.selectedEnvironment.applicationLayer.svnBranch}" />
+                        </p:panelGrid>
+                    </p:fieldset>
+
+                    <p:spacer height="20"/>
+                    <p:spacer height="20"/>
+
+                    <p:graphicImage name="./../resources/images/data-server.png" height="100" width="100"/>
+
+                    <p:fieldset legend="Serwer bazy danych">
+                        <p:panelGrid columns="2" style="width: 100%;" columnClasses="one, two">
+                            <h:outputText value="HOST:" style="font-weight: bold" />
+                            <h:outputText value="#{riskOperonBean.selectedEnvironment.databaseLayer.host}" />
+
+                            <h:outputText value="OS:" style="font-weight: bold" />
+                            <h:outputText value="#{riskOperonBean.selectedEnvironment.databaseLayer.operatingSystem}" />
+
+                            <h:outputText value="Database:" style="font-weight: bold" />
+                            <h:outputText value="#{riskOperonBean.selectedEnvironment.databaseLayer.databaseSystem}" />
+
+                            <h:outputText value="Link:" style="font-weight: bold" />
+                            <h:outputText value="#{riskOperonBean.selectedEnvironment.databaseLayer.link}" />
+                        </p:panelGrid>
+                    </p:fieldset>
+
+                    <p:spacer height="20"/>
+                    <p:spacer height="20"/>
+
+                    <p:graphicImage name="./../resources/images/print-server.png" height="100" width="100"/>
+
+                    <p:fieldset legend="Serwer RMI">
+                        <p:panelGrid columns="2" style="width: 100%;" columnClasses="one, two">
+                            <h:outputText value="HOST:" style="font-weight: bold" />
+                            <h:outputText value="#{riskOperonBean.selectedEnvironment.rmiLayer.host}" />
+
+                            <h:outputText value="OS:" style="font-weight: bold" />
+                            <h:outputText value="#{riskOperonBean.selectedEnvironment.rmiLayer.operatingSystem}" />
+
+                            <h:outputText value="PORT:" style="font-weight: bold" />
+                            <h:outputText value="#{riskOperonBean.selectedEnvironment.rmiLayer.port}" />
+
+                            <h:outputText value="Raporty:" style="font-weight: bold" />
+                            <h:outputText value="#{riskOperonBean.selectedEnvironment.rmiLayer.reportsPath}" />
+
+                            <h:outputText value="Server:" style="font-weight: bold" />
+                            <h:outputText value="#{riskOperonBean.selectedEnvironment.rmiLayer.rmiServerPath}" />
+                        </p:panelGrid>
+                    </p:fieldset>
+
+                    <p:spacer height="20"/>
+                    <p:spacer height="20"/>
+
+                </p:panelGrid>
+
+                <br/>
+
+                <h:commandLink action="#{riskOperonBean.generateReport()}" rendered="#{riskOperonBean.rendered}">
+                    <p:graphicImage name="./../resources/images/pdf.png" />
+                </h:commandLink>
+
+            </h:form>
+
+        </ui:define>
+    </ui:composition>
+</html>

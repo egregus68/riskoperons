@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                    xmlns:ui="http://java.sun.com/jsf/facelets"
+                    template="templates/template.xhtml">
+        <ui:define name="metadata">
+        </ui:define>
+        <ui:define name="content">
+            <h:form>
+                <p:tabView value="#{riskOperonBean.riskOperonsEntries}" var="client" orientation="left">
+                    <p:tab title="#{client.clientName}" >                    
+                        <p:accordionPanel value="#{client.clientEnvironments}" var="environment" >
+                            <p:tab title="Środowisko - #{environment.environmentType} - #{environment.name}">
+                                <p:panelGrid columns="3" style="width: 100%;" columnClasses="appl-style, db-style, rmi-style">       
+                                    <h:panelGroup layout="block">
+                                        <h:panelGrid style="width: 100%;">
+                                            <f:facet name="header">
+                                                <p:row>
+                                                    <p:column style="text-align: center;">
+                                                        <h:outputLink value="#{environment.applicationLayer.getUrlPath()}" title="#{environment.applicationLayer.getUrlPath()}">                                        
+                                                            <p:graphicImage name="./../resources/images/web-server.png" height="90" width="90"/>
+                                                        </h:outputLink>
+                                                    </p:column>
+                                                </p:row>
+                                            </f:facet>    
+                                            <p:row>
+                                                <p:column width="100" style="vertical-align: top">
+                                                    <p:fieldset legend="Serwer aplikacji">
+                                                        <p:panelGrid columns="2" style="width: 100%;" columnClasses="one, two">
+                                                            <h:outputText value="URL:" style="font-weight: bold" />                                                            
+                                                            <h:outputLink value="#{environment.applicationLayer.getUrlPath()}" title="#{environment.applicationLayer.getUrlPath()}">  
+                                                                <h:outputText value="#{environment.applicationLayer.getUrlPath()}"/>  
+                                                            </h:outputLink>  
+
+                                                            <h:outputText value="HOST:" style="font-weight: bold" />
+                                                            <h:outputText value="#{environment.applicationLayer.host}" />
+
+                                                            <h:outputText value="OS:" style="font-weight: bold" />
+                                                            <h:outputText value="#{environment.applicationLayer.operatingSystem}" />
+
+                                                            <h:outputText value="AS:" style="font-weight: bold" />
+                                                            <h:outputText value="#{environment.applicationLayer.applicationSystem}" />
+
+                                                            <h:outputText value="SVN Branch:" style="font-weight: bold" />
+                                                            <h:outputText value="#{environment.applicationLayer.svnBranch}" />
+                                                        </p:panelGrid>
+                                                    </p:fieldset>
+                                                </p:column>
+                                            </p:row>
+                                        </h:panelGrid>
+                                    </h:panelGroup>
+
+                                    <h:panelGroup layout="block">
+                                        <h:panelGrid style="width: 100%;">
+                                            <f:facet name="header">
+                                                <p:row>
+                                                    <p:column style="text-align: center;">
+                                                        <p:graphicImage name="./../resources/images/data-server.png" height="90" width="90"/>
+                                                    </p:column>
+                                                </p:row>
+                                            </f:facet>
+                                            <p:row>
+                                                <p:column width="100" style="vertical-align: top">
+                                                    <p:fieldset legend="Serwer bazy danych">
+                                                        <p:panelGrid columns="2" style="width: 100%;" columnClasses="one, two">
+                                                            <h:outputText value="HOST:" style="font-weight: bold" />
+                                                            <h:outputText value="#{environment.databaseLayer.host}" />
+
+                                                            <h:outputText value="OS:" style="font-weight: bold" />
+                                                            <h:outputText value="#{environment.databaseLayer.operatingSystem}" />
+
+                                                            <h:outputText value="Database:" style="font-weight: bold" />
+                                                            <h:outputText value="#{environment.databaseLayer.databaseSystem}" />
+
+                                                            <h:outputText value="Link:" style="font-weight: bold" />
+                                                            <h:outputText value="#{environment.databaseLayer.link}" />
+                                                        </p:panelGrid>
+                                                    </p:fieldset>
+                                                </p:column>
+                                            </p:row>
+                                        </h:panelGrid>
+                                    </h:panelGroup>
+
+                                    <h:panelGroup layout="block" style="border: 0px;">
+                                        <h:panelGrid style="width: 100%;">
+                                            <f:facet name="header">
+                                                <p:row>
+                                                    <p:column style="text-align: center;">
+                                                        <p:graphicImage name="./../resources/images/print-server.png" height="90" width="90"/>
+                                                    </p:column>
+                                                </p:row>
+                                            </f:facet>
+                                            <p:row>
+                                                <p:column width="100" style="vertical-align: top">
+                                                    <p:fieldset legend="Serwer RMI">
+                                                        <p:panelGrid columns="2" style="width: 100%;" columnClasses="one, two">
+                                                            <h:outputText value="HOST:" style="font-weight: bold" />
+                                                            <h:outputText value="#{environment.rmiLayer.host}" />
+
+                                                            <h:outputText value="OS:" style="font-weight: bold" />
+                                                            <h:outputText value="#{environment.rmiLayer.operatingSystem}" />
+
+                                                            <h:outputText value="PORT:" style="font-weight: bold" />
+                                                            <h:outputText value="#{environment.rmiLayer.port}" />
+
+                                                            <h:outputText value="Raporty:" style="font-weight: bold" />
+                                                            <h:outputText value="#{environment.rmiLayer.reportsPath}" />
+
+                                                            <h:outputText value="Server:" style="font-weight: bold" />
+                                                            <h:outputText value="#{environment.rmiLayer.rmiServerPath}" />
+                                                        </p:panelGrid>
+                                                    </p:fieldset>
+                                                </p:column>
+                                            </p:row>
+                                        </h:panelGrid>
+                                    </h:panelGroup>
+                                </p:panelGrid>
+
+                                <h:commandLink action="#{riskOperonBean.generateReport(environment)}">
+                                    <p:graphicImage name="./../resources/images/pdf.png" />
+                                </h:commandLink>
+
+                            </p:tab>
+                        </p:accordionPanel>
+                    </p:tab>
+                </p:tabView>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>

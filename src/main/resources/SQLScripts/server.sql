@@ -1,0 +1,6 @@
+REM INSERTING into SERVER
+ALTER SESSION SET CURRENT_SCHEMA = RISKOPERONS;
+SET DEFINE OFF;
+Insert into SERVER (ID,IP_ADDRESS,OPERATING_SYSTEM,CPU,RAM,HDD,SOFTWARE) values ('1','10.20.187.2','Windows Server 2008 R2 Standard - Service Pack 1','Intel Xeon E5530 @2.4GHz','16 GB','C - 120 GB','- JBoss 4.0.5GA
+- Oracle');
+Insert into SERVER (ID,IP_ADDRESS,OPERATING_SYSTEM,CPU,RAM,HDD,SOFTWARE) values ('2','10.20.187.3',null,null,null,null,null);

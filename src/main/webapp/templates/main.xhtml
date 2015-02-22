@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/tableLayout.css"/>
+        <title>riskOPERONs</title>
+
+        <style type="text/css">
+
+            .left-style {
+                width: 15%;       
+                text-align: center;
+                vertical-align: bottom;
+            }
+            .right-style {
+                width: 85%; 
+            }
+            .one {
+                width: 20%;
+                text-align: right;
+                vertical-align: middle;
+            }
+            .two {
+                width: 80%;
+                text-align: left;
+                vertical-align: middle;
+            }
+        </style>
+
+    </h:head>
+
+    <h:body>
+
+        <table cellspacing="10px" style="width: 100%;">
+            <tr>
+                <td id="top" colspan="2">
+                    <ui:insert name="top">Lista środowisk systemu riskOperon w BSB</ui:insert>
+                </td>
+            </tr>
+            <tr>
+                <td id="left">
+                    <ui:insert name="left">
+                        <ui:include src="/templates/menu.xhtml" />
+                    </ui:insert>
+                </td>
+                <td id="content">
+                    <ui:insert name="content">Content</ui:insert>
+                </td>
+            </tr>
+        </table>
+
+    </h:body>
+
+
+</html>

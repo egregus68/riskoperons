@@ -1,0 +1,27 @@
+# Eclipse stuff
+/.classpath
+/.project
+/.settings
+
+# netbeans
+/nbproject
+*.NavData
+nb-configuration.xml
+
+# we use maven!
+/build.xml
+
+# maven
+/target
+
+# various other potential build files
+/build
+/bin
+/dist
+/manifest.mf
+
+# Other Libraries
+*.jar
+
+# riskoperons targets
+/riskoperons/target/
