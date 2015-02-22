@@ -188,18 +188,44 @@ public class RiskOperonBean extends ReportBase implements Serializable {
                         wrapper.setEnvironmentName("Środowisko " + ce.getEnvironment().getEnvironmentType().getName() + " " + ce.getEnvironment().getName() + "  Id: " + ce.getEnvironment().getId());
                         wrapper.setEnvironmentInfo(ce.getEnvironment().getInformation());
                         
-                        wrapper.setAppUrlPath(ce.getEnvironment().getApplicationLayer().getUrlPath());
-                        wrapper.setAppHost(ce.getEnvironment().getApplicationLayer().getHost());
-                        wrapper.setAppOperatingSystem(ce.getEnvironment().getApplicationLayer().getOperatingSystem());
-                        wrapper.setAppAS(ce.getEnvironment().getApplicationLayer().getApplicationSystem());
-                        wrapper.setAppPath(ce.getEnvironment().getApplicationLayer().getPath());
-                        wrapper.setAppUrlConsole(ce.getEnvironment().getApplicationLayer().getUrlAdminConsole());
-                        wrapper.setAppSvnBranch(ce.getEnvironment().getApplicationLayer().getSvnBranch());
+                        if (null != ce.getEnvironment().getApplicationLayer()) {
+                            if (null!= ce.getEnvironment().getApplicationLayer().getUrlPath()) {
+                                wrapper.setAppUrlPath(ce.getEnvironment().getApplicationLayer().getUrlPath());
+                            }
+                            if (null!= ce.getEnvironment().getApplicationLayer().getHost()) {
+                                wrapper.setAppHost(ce.getEnvironment().getApplicationLayer().getHost());
+                            }
+                            if (null!= ce.getEnvironment().getApplicationLayer().getOperatingSystem()) {
+                                wrapper.setAppOperatingSystem(ce.getEnvironment().getApplicationLayer().getOperatingSystem());
+                            }
+                            if (null!= ce.getEnvironment().getApplicationLayer().getApplicationSystem()) {
+                                wrapper.setAppAS(ce.getEnvironment().getApplicationLayer().getApplicationSystem());
+                            }
+                            if (null!= ce.getEnvironment().getApplicationLayer().getPath()) {
+                                wrapper.setAppPath(ce.getEnvironment().getApplicationLayer().getPath());
+                            }
+                            if (null!= ce.getEnvironment().getApplicationLayer().getUrlAdminConsole()) {
+                                wrapper.setAppUrlConsole(ce.getEnvironment().getApplicationLayer().getUrlAdminConsole());
+                            }
+                            if (null!= ce.getEnvironment().getApplicationLayer().getSvnBranch()) {
+                                wrapper.setAppSvnBranch(ce.getEnvironment().getApplicationLayer().getSvnBranch());
+                            }
+                        }
                         
-                        wrapper.setDbHost(ce.getEnvironment().getDatabaseLayer().getHost());
-                        wrapper.setDbOperatingSystem(ce.getEnvironment().getDatabaseLayer().getOperatingSystem());
-                        wrapper.setDbDatabase(ce.getEnvironment().getDatabaseLayer().getDatabaseSystem());
-                        wrapper.setDbLink(ce.getEnvironment().getDatabaseLayer().getLink());
+                        if (null!= ce.getEnvironment().getDatabaseLayer()) {
+                            if (null != ce.getEnvironment().getDatabaseLayer().getHost()) {
+                                wrapper.setDbHost(ce.getEnvironment().getDatabaseLayer().getHost());
+                            }
+                            if (null != ce.getEnvironment().getDatabaseLayer().getOperatingSystem()) {
+                                wrapper.setDbOperatingSystem(ce.getEnvironment().getDatabaseLayer().getOperatingSystem());
+                            }
+                            if (null != ce.getEnvironment().getDatabaseLayer().getDatabaseSystem()) {
+                                wrapper.setDbDatabase(ce.getEnvironment().getDatabaseLayer().getDatabaseSystem());
+                            }
+                            if (null != ce.getEnvironment().getDatabaseLayer().getLink()) {
+                                wrapper.setDbLink(ce.getEnvironment().getDatabaseLayer().getLink());
+                            }
+                        }
                         
                         if (null != ce.getEnvironment().getRmiLayer()) {
                             if (null != ce.getEnvironment().getRmiLayer().getHost()) {
@@ -218,6 +244,7 @@ public class RiskOperonBean extends ReportBase implements Serializable {
                                 wrapper.setRmiServerPath(ce.getEnvironment().getRmiLayer().getRmiServerPath());
                             }
                         }
+                        
                         riskOperonsReportWrapper.add(wrapper);
                     }
                 }
