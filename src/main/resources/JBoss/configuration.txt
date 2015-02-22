@@ -1,0 +1,32 @@
+			<datasources>
+				...
+				
+				<datasource jta="true" jndi-name="java:/riskoperonsDS" pool-name="riskoperonsDS" enabled="true" use-java-context="true" use-ccm="true">
+                    <connection-url>jdbc:oracle:thin:@localhost:1521:homedb</connection-url>
+                    <driver>oracle</driver>
+                    <transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
+                    <pool>
+                        <prefill>true</prefill>
+                        <use-strict-min>false</use-strict-min>
+                        <flush-strategy>FailingConnectionOnly</flush-strategy>
+                    </pool>
+                    <security>
+                        <user-name>riskoperons</user-name>
+                        <password>riskoperons</password>
+                    </security>
+                </datasource>
+				
+				...
+				
+                <drivers>
+					
+					...
+
+					<driver name="oracle" module="com.oracle.ojdbc6">
+                        <xa-datasource-class>oracle.jdbc.OracleDriver</xa-datasource-class>
+                    </driver>
+					
+					...
+					
+                </drivers>
+            </datasources>
