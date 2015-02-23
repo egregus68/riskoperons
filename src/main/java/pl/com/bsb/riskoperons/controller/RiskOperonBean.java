@@ -210,6 +210,9 @@ public class RiskOperonBean extends ReportBase implements Serializable {
                             if (null!= ce.getEnvironment().getApplicationLayer().getSvnBranch()) {
                                 wrapper.setAppSvnBranch(ce.getEnvironment().getApplicationLayer().getSvnBranch());
                             }
+                            if (null!= ce.getEnvironment().getApplicationLayer().getInformation()) {
+                                wrapper.setAppInformation(ce.getEnvironment().getApplicationLayer().getInformation());
+                            }
                         }
                         
                         if (null!= ce.getEnvironment().getDatabaseLayer()) {
@@ -224,6 +227,9 @@ public class RiskOperonBean extends ReportBase implements Serializable {
                             }
                             if (null != ce.getEnvironment().getDatabaseLayer().getLink()) {
                                 wrapper.setDbLink(ce.getEnvironment().getDatabaseLayer().getLink());
+                            }
+                            if (null != ce.getEnvironment().getDatabaseLayer().getInformation()) {
+                                wrapper.setDbInformation(ce.getEnvironment().getDatabaseLayer().getInformation());
                             }
                         }
                         
@@ -242,6 +248,9 @@ public class RiskOperonBean extends ReportBase implements Serializable {
                             }
                             if (null != ce.getEnvironment().getRmiLayer().getRmiServerPath()) {
                                 wrapper.setRmiServerPath(ce.getEnvironment().getRmiLayer().getRmiServerPath());
+                            }
+                            if (null != ce.getEnvironment().getRmiLayer().getInformation()) {
+                                wrapper.setRmiInformation(ce.getEnvironment().getRmiLayer().getInformation());
                             }
                         }
                         

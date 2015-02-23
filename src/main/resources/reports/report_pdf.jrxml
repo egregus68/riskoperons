@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" language="groovy" pageWidth="595" pageHeight="842" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="56" bottomMargin="56" uuid="f336733e-f107-430c-afdc-447efe1aba7c">
 	<property name="ireport.zoom" value="1.2100000000000017"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="289"/>
+	<property name="ireport.y" value="185"/>
 	<parameter name="reportTitle" class="java.lang.String"/>
 	<parameter name="createDate" class="java.util.Date"/>
 	<parameter name="LOGO_INPUT_STREAM" class="java.io.InputStream" isForPrompting="false"/>
@@ -26,94 +26,97 @@
 	<field name="rmiPort" class="java.lang.String"/>
 	<field name="rmiReportsPath" class="java.lang.String"/>
 	<field name="rmiServerPath" class="java.lang.String"/>
+	<field name="appInformation" class="java.lang.String"/>
+	<field name="dbInformation" class="java.lang.String"/>
+	<field name="rmiInformation" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
 		<band height="79" splitType="Stretch">
 			<textField isBlankWhenNull="true">
-				<reportElement x="134" y="59" width="349" height="20" uuid="d9a3b576-3d6f-4cda-aa15-0bc1cfc3f12a"/>
+				<reportElement uuid="d9a3b576-3d6f-4cda-aa15-0bc1cfc3f12a" x="134" y="59" width="349" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font isBold="true" pdfEncoding="Cp1250"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{reportTitle}]]></textFieldExpression>
 			</textField>
 			<textField pattern="yyyy-MM-dd HH:mm:ss" isBlankWhenNull="true">
-				<reportElement x="134" y="0" width="349" height="20" uuid="f8759acd-06ab-4165-9770-026550562014"/>
+				<reportElement uuid="f8759acd-06ab-4165-9770-026550562014" x="134" y="0" width="349" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{createDate}]]></textFieldExpression>
 			</textField>
 			<image>
-				<reportElement x="0" y="0" width="134" height="79" uuid="084956fc-71b0-4291-ae0b-2aa7f55fbb7f"/>
+				<reportElement uuid="084956fc-71b0-4291-ae0b-2aa7f55fbb7f" x="0" y="0" width="134" height="79"/>
 				<imageExpression><![CDATA[$P{LOGO_INPUT_STREAM}]]></imageExpression>
 			</image>
 		</band>
 	</title>
 	<detail>
-		<band height="515" splitType="Stretch">
+		<band height="575" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="20" width="80" height="20" uuid="b637ec22-e9d5-442f-924c-0dec89606462"/>
+				<reportElement uuid="b637ec22-e9d5-442f-924c-0dec89606462" x="0" y="20" width="80" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Klient:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="20" width="403" height="20" uuid="8a23b04e-7822-42a4-a3ad-6ff21584062a"/>
+				<reportElement uuid="8a23b04e-7822-42a4-a3ad-6ff21584062a" x="80" y="20" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{clientName}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="40" width="80" height="20" uuid="8a17bd51-f562-4b7c-96fc-3ca36f9f190c"/>
+				<reportElement uuid="8a17bd51-f562-4b7c-96fc-3ca36f9f190c" x="0" y="40" width="80" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Informacje]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="40" width="403" height="20" uuid="860486bb-8b65-4f05-903e-08cb368a08ac"/>
+				<reportElement uuid="860486bb-8b65-4f05-903e-08cb368a08ac" x="80" y="40" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{clientInformation}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="0" y="10" width="483" height="1" uuid="479424aa-c569-4f07-97ab-12b4c45fbb7c"/>
+				<reportElement uuid="479424aa-c569-4f07-97ab-12b4c45fbb7c" x="0" y="10" width="483" height="1"/>
 			</line>
 			<staticText>
-				<reportElement mode="Opaque" x="0" y="100" width="483" height="20" backcolor="#CCFFCC" uuid="36a0e5e3-3d07-4b32-9473-c0f63fa6ab20"/>
+				<reportElement uuid="36a0e5e3-3d07-4b32-9473-c0f63fa6ab20" mode="Opaque" x="0" y="100" width="483" height="20" backcolor="#CCFFCC"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isBold="true" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[SERWER APLIKACJI]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="0" y="275" width="483" height="20" backcolor="#66FF66" uuid="d55bc21b-a637-4d99-9d09-ea65495ed8e6"/>
+				<reportElement uuid="d55bc21b-a637-4d99-9d09-ea65495ed8e6" mode="Opaque" x="0" y="295" width="483" height="20" backcolor="#66FF66"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isBold="true" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[SERWER BAZY DANYCH]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="0" y="390" width="483" height="20" backcolor="#33CC00" uuid="f626973b-94f8-4a9d-961c-d7422aae9e24"/>
+				<reportElement uuid="f626973b-94f8-4a9d-961c-d7422aae9e24" mode="Opaque" x="0" y="430" width="483" height="20" backcolor="#33CC00"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isBold="true" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[SERWER RMI]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="125" width="80" height="20" uuid="6ce4dfe4-3756-4da7-b4d8-d6fcfbbf295e"/>
+				<reportElement uuid="6ce4dfe4-3756-4da7-b4d8-d6fcfbbf295e" x="0" y="125" width="80" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[URL:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="125" width="403" height="20" uuid="4a52bfa8-fe8a-426d-9582-a534e54f20f5"/>
+				<reportElement uuid="4a52bfa8-fe8a-426d-9582-a534e54f20f5" x="80" y="125" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="6"/>
@@ -121,35 +124,35 @@
 				<textFieldExpression><![CDATA[$F{appUrlPath}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="70" width="80" height="20" uuid="6f8918bf-6aa7-4c0b-9843-e9abe1b68db0"/>
+				<reportElement uuid="6f8918bf-6aa7-4c0b-9843-e9abe1b68db0" x="0" y="70" width="80" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Środowisko:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="70" width="270" height="20" uuid="409bb995-940d-456c-b188-8a8328604244"/>
+				<reportElement uuid="409bb995-940d-456c-b188-8a8328604244" x="80" y="70" width="270" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{environmentName}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="350" y="70" width="133" height="20" forecolor="#FF0033" uuid="75c7f599-dcce-478f-a24e-02878de744bb"/>
+				<reportElement uuid="75c7f599-dcce-478f-a24e-02878de744bb" x="350" y="70" width="133" height="20" forecolor="#FF0033"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{environmentInfo}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="145" width="80" height="20" uuid="28ab7b8a-3c06-4d30-bc38-ab77f1b6ee19"/>
+				<reportElement uuid="28ab7b8a-3c06-4d30-bc38-ab77f1b6ee19" x="0" y="145" width="80" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[HOST:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="145" width="403" height="20" uuid="02d9e816-4657-4782-8a47-7e631bbbf5ef"/>
+				<reportElement uuid="02d9e816-4657-4782-8a47-7e631bbbf5ef" x="80" y="145" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="6"/>
@@ -157,14 +160,14 @@
 				<textFieldExpression><![CDATA[$F{appHost}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="165" width="80" height="20" uuid="82579287-10fa-4624-b668-02e9f693786e"/>
+				<reportElement uuid="82579287-10fa-4624-b668-02e9f693786e" x="0" y="165" width="80" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[OS:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="165" width="403" height="20" uuid="1be0cfb6-7a2a-4300-b002-4e5cc4adeb45"/>
+				<reportElement uuid="1be0cfb6-7a2a-4300-b002-4e5cc4adeb45" x="80" y="165" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="6"/>
@@ -172,14 +175,14 @@
 				<textFieldExpression><![CDATA[$F{appOperatingSystem}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="185" width="80" height="20" uuid="f9107d13-96d1-40df-9a0f-8d1de2ccdfb9"/>
+				<reportElement uuid="f9107d13-96d1-40df-9a0f-8d1de2ccdfb9" x="0" y="185" width="80" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[AS:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="185" width="403" height="20" uuid="60dd2b7b-9876-4653-a143-fea46e1c112d"/>
+				<reportElement uuid="60dd2b7b-9876-4653-a143-fea46e1c112d" x="80" y="185" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="6"/>
@@ -187,14 +190,14 @@
 				<textFieldExpression><![CDATA[$F{appAS}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="205" width="80" height="20" uuid="0806b088-c58e-485b-bfef-e3bf748e764e"/>
+				<reportElement uuid="0806b088-c58e-485b-bfef-e3bf748e764e" x="0" y="205" width="80" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Konsola adm.:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="205" width="403" height="20" uuid="2b5c45c5-c372-46b3-a9b5-eb3f6852cacb"/>
+				<reportElement uuid="2b5c45c5-c372-46b3-a9b5-eb3f6852cacb" x="80" y="205" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="6"/>
@@ -202,14 +205,14 @@
 				<textFieldExpression><![CDATA[$F{appUrlConsole}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="225" width="80" height="20" uuid="af862401-f77e-436e-ab15-c8791443e1a7"/>
+				<reportElement uuid="af862401-f77e-436e-ab15-c8791443e1a7" x="0" y="225" width="80" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Położenie:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="225" width="403" height="20" uuid="0289229d-1f71-4882-9301-53f0d073b8a1"/>
+				<reportElement uuid="0289229d-1f71-4882-9301-53f0d073b8a1" x="80" y="225" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="6"/>
@@ -217,14 +220,14 @@
 				<textFieldExpression><![CDATA[$F{appPath}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="245" width="80" height="20" uuid="ca27da3b-94c6-47b9-bb03-eb72aeeb9b2a"/>
+				<reportElement uuid="ca27da3b-94c6-47b9-bb03-eb72aeeb9b2a" x="0" y="245" width="80" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[SVN:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="245" width="403" height="20" uuid="316ce3fe-1bab-498d-93e9-dc982b260c54"/>
+				<reportElement uuid="316ce3fe-1bab-498d-93e9-dc982b260c54" x="80" y="245" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="6"/>
@@ -232,14 +235,14 @@
 				<textFieldExpression><![CDATA[$F{appSvnBranch}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="300" width="80" height="20" uuid="de02db25-9075-46a9-b1bc-0832f9fc7f1f"/>
+				<reportElement uuid="de02db25-9075-46a9-b1bc-0832f9fc7f1f" x="0" y="320" width="80" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[HOST:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="300" width="403" height="20" uuid="9e6f0aa7-2386-4c11-ae5e-aac41624bb58"/>
+				<reportElement uuid="9e6f0aa7-2386-4c11-ae5e-aac41624bb58" x="80" y="320" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="6"/>
@@ -247,14 +250,14 @@
 				<textFieldExpression><![CDATA[$F{dbHost}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="320" width="80" height="20" uuid="b3b84b6c-cb82-4b1d-be58-1cc3acc4150e"/>
+				<reportElement uuid="b3b84b6c-cb82-4b1d-be58-1cc3acc4150e" x="0" y="340" width="80" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[OS:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="320" width="403" height="20" uuid="051dfb44-58d6-4304-a905-8fc67ec412e4"/>
+				<reportElement uuid="051dfb44-58d6-4304-a905-8fc67ec412e4" x="80" y="340" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="6"/>
@@ -262,7 +265,7 @@
 				<textFieldExpression><![CDATA[$F{dbOperatingSystem}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="340" width="403" height="20" uuid="9cbb221b-8967-4ab0-92cc-b76a9f3936ed"/>
+				<reportElement uuid="9cbb221b-8967-4ab0-92cc-b76a9f3936ed" x="80" y="360" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="6"/>
@@ -270,14 +273,14 @@
 				<textFieldExpression><![CDATA[$F{dbDatabase}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="340" width="80" height="20" uuid="543367a7-2a6f-48c4-85c9-f138c24d1cc0"/>
+				<reportElement uuid="543367a7-2a6f-48c4-85c9-f138c24d1cc0" x="0" y="360" width="80" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Database:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="360" width="403" height="20" uuid="3ab0673c-395d-4f63-b6cf-4032ff02612c"/>
+				<reportElement uuid="3ab0673c-395d-4f63-b6cf-4032ff02612c" x="80" y="380" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="6"/>
@@ -285,14 +288,14 @@
 				<textFieldExpression><![CDATA[$F{dbLink}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="360" width="80" height="20" uuid="0d387768-9670-417a-91de-91d577d9c019"/>
+				<reportElement uuid="0d387768-9670-417a-91de-91d577d9c019" x="0" y="380" width="80" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Link:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="455" width="403" height="20" uuid="c039f1b2-f894-441b-a5e1-0055eedf85b8"/>
+				<reportElement uuid="c039f1b2-f894-441b-a5e1-0055eedf85b8" x="80" y="495" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="6"/>
@@ -300,7 +303,7 @@
 				<textFieldExpression><![CDATA[$F{rmiPort}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="435" width="403" height="20" uuid="ceeb6d7f-fe9c-4597-a9f7-90b2b7d0fdb3"/>
+				<reportElement uuid="ceeb6d7f-fe9c-4597-a9f7-90b2b7d0fdb3" x="80" y="475" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="6"/>
@@ -308,14 +311,14 @@
 				<textFieldExpression><![CDATA[$F{rmiOperatingSystem}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="415" width="80" height="20" uuid="ac093f17-4450-4e66-91e3-ac890fd9f71e"/>
+				<reportElement uuid="ac093f17-4450-4e66-91e3-ac890fd9f71e" x="0" y="455" width="80" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[HOST:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="475" width="403" height="20" uuid="33dc2a47-9878-46d3-88ee-4ca6a6064f9f"/>
+				<reportElement uuid="33dc2a47-9878-46d3-88ee-4ca6a6064f9f" x="80" y="515" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="6"/>
@@ -323,14 +326,14 @@
 				<textFieldExpression><![CDATA[$F{rmiReportsPath}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="435" width="80" height="20" uuid="b2b1dbf8-c453-4469-be6f-cf51f662f30f"/>
+				<reportElement uuid="b2b1dbf8-c453-4469-be6f-cf51f662f30f" x="0" y="475" width="80" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[OS:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="415" width="403" height="20" uuid="94c4e394-1d2b-4983-aa1d-e1168cfd328d"/>
+				<reportElement uuid="94c4e394-1d2b-4983-aa1d-e1168cfd328d" x="80" y="455" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="6"/>
@@ -338,34 +341,79 @@
 				<textFieldExpression><![CDATA[$F{rmiHost}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="475" width="80" height="20" uuid="2abc369f-23ee-4c46-93a5-aaa76987b1a2"/>
+				<reportElement uuid="2abc369f-23ee-4c46-93a5-aaa76987b1a2" x="0" y="515" width="80" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Raporty:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="455" width="80" height="20" uuid="d23973a0-95a5-4ba8-b26e-0853f78f0760"/>
+				<reportElement uuid="d23973a0-95a5-4ba8-b26e-0853f78f0760" x="0" y="495" width="80" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Port:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="495" width="80" height="20" uuid="71fcd12b-a1ab-44a9-901a-bbafcabe9045"/>
+				<reportElement uuid="71fcd12b-a1ab-44a9-901a-bbafcabe9045" x="0" y="535" width="80" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Serwer:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="80" y="495" width="403" height="20" uuid="5d700762-407a-4103-8030-561424b48824"/>
+				<reportElement uuid="5d700762-407a-4103-8030-561424b48824" x="80" y="535" width="403" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="6"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{rmiServerPath}]]></textFieldExpression>
 			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="7959086a-3203-4877-92e1-f958e14a62d0" x="80" y="265" width="403" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{appInformation}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="edd07a48-8785-4ab7-80f8-c2b64df966d4" x="0" y="265" width="80" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Uwagi:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="a24cb141-21a0-4a28-b701-8687b22414b3" x="80" y="400" width="403" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dbInformation}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="af49a944-3959-40bf-95c1-35011146f46a" x="0" y="400" width="80" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Uwagi:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="8b80f3d7-cc44-4275-b3f5-31b2bcce391f" x="80" y="555" width="403" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rmiInformation}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="6d0553d5-cf11-4f01-a7b3-44fc8cb642bc" x="0" y="555" width="80" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Uwagi:]]></text>
+			</staticText>
 		</band>
 	</detail>
 </jasperReport>

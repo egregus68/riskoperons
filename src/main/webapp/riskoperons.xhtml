@@ -64,6 +64,9 @@ and open the template in the editor.
 
                             <h:outputText value="SVN:" style="font-weight: bold" />
                             <h:outputText value="#{riskOperonBean.selectedEnvironment.applicationLayer.svnBranch}" />
+                            
+                            <h:outputText value="Uwagi:" style="font-weight: bold" />
+                            <h:outputText value="#{riskOperonBean.selectedEnvironment.applicationLayer.information}" />
                         </p:panelGrid>
                     </p:fieldset>
 
@@ -85,6 +88,9 @@ and open the template in the editor.
 
                             <h:outputText value="Link:" style="font-weight: bold" />
                             <h:outputText value="#{riskOperonBean.selectedEnvironment.databaseLayer.link}" />
+                            
+                            <h:outputText value="Uwagi:" style="font-weight: bold" />
+                            <h:outputText value="#{riskOperonBean.selectedEnvironment.databaseLayer.information}" />
                         </p:panelGrid>
                     </p:fieldset>
 
@@ -109,6 +115,9 @@ and open the template in the editor.
 
                             <h:outputText value="Server:" style="font-weight: bold" />
                             <h:outputText value="#{riskOperonBean.selectedEnvironment.rmiLayer.rmiServerPath}" />
+                            
+                            <h:outputText value="Uwagi:" style="font-weight: bold" />
+                            <h:outputText value="#{riskOperonBean.selectedEnvironment.rmiLayer.information}" />
                         </p:panelGrid>
                     </p:fieldset>
 

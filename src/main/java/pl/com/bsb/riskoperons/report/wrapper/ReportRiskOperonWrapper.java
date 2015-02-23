@@ -28,17 +28,20 @@ public class ReportRiskOperonWrapper implements Serializable {
     private String appUrlConsole;
     private String appPath;
     private String appSvnBranch;   
+    private String appInformation;
 
     private String dbHost;
     private String dbOperatingSystem;
     private String dbDatabase;
     private String dbLink;
+    private String dbInformation;
 
     private String rmiHost;
     private String rmiOperatingSystem;
     private String rmiPort;
     private String rmiReportsPath;
     private String rmiServerPath;
+    private String rmiInformation;
 
     public ReportRiskOperonWrapper() {
     }
@@ -131,6 +134,14 @@ public class ReportRiskOperonWrapper implements Serializable {
         this.appSvnBranch = appSvnBranch;
     }
 
+    public String getAppInformation() {
+        return appInformation;
+    }
+
+    public void setAppInformation(String appInformation) {
+        this.appInformation = appInformation;
+    }
+
     public String getDbHost() {
         return dbHost;
     }
@@ -161,6 +172,14 @@ public class ReportRiskOperonWrapper implements Serializable {
 
     public void setDbLink(String dbLink) {
         this.dbLink = dbLink;
+    }
+
+    public String getDbInformation() {
+        return dbInformation;
+    }
+
+    public void setDbInformation(String dbInformation) {
+        this.dbInformation = dbInformation;
     }
 
     public String getRmiHost() {
@@ -202,112 +221,13 @@ public class ReportRiskOperonWrapper implements Serializable {
     public void setRmiServerPath(String rmiServerPath) {
         this.rmiServerPath = rmiServerPath;
     }
-    
-    
 
-    public static class PackagesList {
-
-        private Long bifId;
-        private String transactionGroup;
-        private String packagetransactionType;
-        private BigDecimal transactionsAmount;
-        private Integer transactionsCount;
-
-        public PackagesList(String transactionGroup, String packagetransactionType, BigDecimal transacitonsAmount, Integer transactionsCount) {
-
-            this.transactionsAmount = transacitonsAmount;
-            this.transactionsCount = transactionsCount;
-            this.transactionGroup = transactionGroup;
-            this.packagetransactionType = packagetransactionType;
-        }
-
-        public Long getBifId() {
-            return bifId;
-        }
-
-        public void setBifId(Long bifId) {
-            this.bifId = bifId;
-        }
-
-        public String getTransactionGroup() {
-            return transactionGroup;
-        }
-
-        public void setTransactionGroup(String transactionGroup) {
-            this.transactionGroup = transactionGroup;
-        }
-
-        public String getPackagetransactionType() {
-            return packagetransactionType;
-        }
-
-        public void setPackagetransactionType(String packagetransactionType) {
-            this.packagetransactionType = packagetransactionType;
-        }
-
-        public BigDecimal getTransactionsAmount() {
-            return transactionsAmount;
-        }
-
-        public void setTransactionsAmount(BigDecimal transacitonsAmount) {
-            this.transactionsAmount = transacitonsAmount;
-        }
-
-        public Integer getTransactionsCount() {
-            return transactionsCount;
-        }
-
-        public void setTransactionsCount(Integer transactionsCount) {
-            this.transactionsCount = transactionsCount;
-        }
-
+    public String getRmiInformation() {
+        return rmiInformation;
     }
 
-    public static class BifList {
-
-        private Date createDate;
-        private String clearingType;
-        private Integer bifNumber;
-        private String medium;
-
-        public BifList(Date createDate, String clearingType, Integer bifNumber, String medium) {
-            this.createDate = createDate;
-            this.clearingType = clearingType;
-            this.bifNumber = bifNumber;
-            this.medium = medium;
-        }
-
-        public Date getCreateDate() {
-            return createDate;
-        }
-
-        public void setCreateDate(Date createDate) {
-            this.createDate = createDate;
-        }
-
-        public String getClearingType() {
-            return clearingType;
-        }
-
-        public void setClearingType(String clearingType) {
-            this.clearingType = clearingType;
-        }
-
-        public Integer getBifNumber() {
-            return bifNumber;
-        }
-
-        public void setBifNumber(Integer bifNumber) {
-            this.bifNumber = bifNumber;
-        }
-
-        public String getMedium() {
-            return medium;
-        }
-
-        public void setMedium(String medium) {
-            this.medium = medium;
-        }
-
+    public void setRmiInformation(String rmiInformation) {
+        this.rmiInformation = rmiInformation;
     }
+    
 }
