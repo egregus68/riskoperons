@@ -73,14 +73,6 @@ public class JasperReportService implements ReportService {
         Class<? extends ReportService> clazz = getClass();
         final String reportPath = DEFAULT_REPORTS_LOCATION + templateName + "_" + reportFormat.name().toLowerCase() + ".jasper";
         result = clazz.getClassLoader().getResourceAsStream(reportPath);
-        /* if (result == null) {
-         if (ReportFormat.CSV.equals(reportFormat)) {
-         result = clazz.getResourceAsStream(DEFAULT_REPORTS_LOCATION + templateName + "_csv" + ".jasper");
-         } else {
-         result = clazz.getResourceAsStream(DEFAULT_REPORTS_LOCATION + templateName + ".jasper");
-         }
-         }
-         * */
         if (result == null) {
             result = clazz.getResourceAsStream(reportPath);
         }
