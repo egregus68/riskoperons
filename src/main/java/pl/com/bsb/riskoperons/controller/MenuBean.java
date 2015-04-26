@@ -30,15 +30,17 @@ import pl.com.bsb.riskoperons.model.ClientEnvironment;
 @SessionScoped
 public class MenuBean implements Serializable {
 
+    private static final long serialVersionUID = 1;
+    
     private static final Logger LOGGER = LoggerFactory.getLogger(MenuBean.class);
     
     private MenuModel menuModel;
     
     @EJB
-    transient private ClientFacade clientFacade;
+    private ClientFacade clientFacade;
     
     @EJB
-    transient private ClientEnvironmentFacade clientEnvironmentFacade;
+    private ClientEnvironmentFacade clientEnvironmentFacade;
     
     /**
      * Creates a new instance of MenuBean

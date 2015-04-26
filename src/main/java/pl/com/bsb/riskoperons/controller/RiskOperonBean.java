@@ -43,6 +43,8 @@ import pl.com.bsb.riskoperons.to.RiskOperonTO;
 @SessionScoped
 public class RiskOperonBean extends ReportBase implements Serializable {
     
+    private static final long serialVersionUID = 1;
+    
     private Logger LOGGER = LoggerFactory.getLogger(RiskOperonBean.class);
     
     @EJB
