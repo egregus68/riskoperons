@@ -48,10 +48,10 @@ public class RiskOperonBean extends ReportBase implements Serializable {
     private Logger LOGGER = LoggerFactory.getLogger(RiskOperonBean.class);
     
     @EJB
-    private ClientFacade clientFacade;
+    transient private ClientFacade clientFacade;
     
     @EJB
-    private ClientEnvironmentFacade clientEnvironmentFacade;
+    transient private ClientEnvironmentFacade clientEnvironmentFacade;
     
     private Environment selectedEnvironment;
     private ReportTemplate reportTemplate;
