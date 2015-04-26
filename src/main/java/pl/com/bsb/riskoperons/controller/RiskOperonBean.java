@@ -164,7 +164,7 @@ public class RiskOperonBean extends ReportBase implements Serializable {
     }
     
     
-    class RiskOperonDataCallback extends AbstractReportDataCallback {
+    class RiskOperonDataCallback extends AbstractReportDataCallback implements Serializable {
 
         @Override
         public Map<String, Object> getParameters() {

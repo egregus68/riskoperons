@@ -35,10 +35,10 @@ public class MenuBean implements Serializable {
     private MenuModel menuModel;
     
     @EJB
-    private ClientFacade clientFacade;
+    transient private ClientFacade clientFacade;
     
     @EJB
-    private ClientEnvironmentFacade clientEnvironmentFacade;
+    transient private ClientEnvironmentFacade clientEnvironmentFacade;
     
     /**
      * Creates a new instance of MenuBean
