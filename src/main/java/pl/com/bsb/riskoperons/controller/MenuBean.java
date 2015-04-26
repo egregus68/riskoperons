@@ -32,15 +32,15 @@ public class MenuBean implements Serializable {
 
     private static final long serialVersionUID = 1;
     
-    private static final Logger LOGGER = LoggerFactory.getLogger(MenuBean.class);
+    transient private static final Logger LOGGER = LoggerFactory.getLogger(MenuBean.class);
     
     private MenuModel menuModel;
     
     @EJB
-    private ClientFacade clientFacade;
+    transient private ClientFacade clientFacade;
     
     @EJB
-    private ClientEnvironmentFacade clientEnvironmentFacade;
+    transient private ClientEnvironmentFacade clientEnvironmentFacade;
     
     /**
      * Creates a new instance of MenuBean

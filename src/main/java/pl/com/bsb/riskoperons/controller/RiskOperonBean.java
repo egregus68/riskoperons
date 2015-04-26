@@ -45,7 +45,7 @@ public class RiskOperonBean extends ReportBase implements Serializable {
     
     private static final long serialVersionUID = 1;
     
-    private Logger LOGGER = LoggerFactory.getLogger(RiskOperonBean.class);
+    transient private Logger LOGGER = LoggerFactory.getLogger(RiskOperonBean.class);
     
     @EJB
     transient private ClientFacade clientFacade;
